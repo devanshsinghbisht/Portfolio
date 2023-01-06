@@ -4,7 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Archivo+Black&family=Gorditas&family=Irish+Grover&family=Pacifico&family=Ramabhadra&display=swap');
 body {
-  background : rgb(192, 186, 186);
+  background: rgb(221,221,221);
+  background: linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(213,215,231,1) 100%);
   overflow-x: hidden;
 }
 
@@ -66,46 +67,23 @@ h1 , span {
   text-shadow: 1px 6px 7px rgba(255,255,255,0.48);
 }
 
+/* Windows Effect */
 
-#cards:hover > .card::after {
-  opacity: 1;
-}
 
 .card {
-  border-radius: 10px;
-  position: relative;
+  border-radius: 0px;
 }
 
-.card:hover::before {
-  opacity: 1;
-}
-
-.card::before,
-.card::after {
-  border-radius: inherit;
-  content: "";
-  height: 100%;
-  opacity: 0;
-  position: absolute;
-  transition: opacity 500ms;
-  width: 100%;
-}
-
-.card::before {
+/* .card::before {
   background: radial-gradient(
-    900px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.134),
-    transparent 20%
+    150px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255,255,255,0.99),rgb(219, 219, 225) 
   );
   z-index: 1;
-}
+}  */
 
 
-.card > .card-content {
-  border-radius: inherit;
-  z-index: 2;
-}
-
+ 
 
 .Front_img {
   box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.3); 

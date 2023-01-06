@@ -38,7 +38,7 @@ export const hamburger = [
 ]
 
 export const Myprojects = [
-    { key : 1 , name : 'Lyriks', img : require('../assets/Lyriks.png') , tags : ['HTML' , "CSS" , "JavaScript", 'React.js' , 'Tailwind'] , text : "This is a React app to listen Songs with the help of Shazam Code API." , live : 'https://lyriks-app-debu.netlify.app/' , github : "https://github.com/devanshsinghbisht/Lyriks"},
+    { key : 1 , name : 'Lyriks', img : require('../assets/Lyriks.png') , tags : ['HTML' , "CSS" , "JavaScript", 'React.js' , 'Tailwind'] , text : "This is a React app to listen Songs with the help of Shazam Core API." , live : 'https://lyriks-app-debu.netlify.app/' , github : "https://github.com/devanshsinghbisht/Lyriks"},
     { key : 2 , name : 'Google Keepr', img : require('../assets/Keepr.png') , tags : ['HTML' , "CSS" , "JavaScript", 'React.js'] , text : "This is a Clone of Google Keepr app" , live : 'false' , github : "https://github.com/devanshsinghbisht/Google-Keepr"},
     { key : 3 , name : 'TodoList', img : require('../assets/TodoList.png') , tags : ['HTML' , "CSS" , "JavaScript", 'Node.js' , 'Mongodb'] , text : "Todo List With the help of Node.js & MongoDB" , live : 'false' , github : "https://github.com/devanshsinghbisht/todoListV02withDB"},
 ]

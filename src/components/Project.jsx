@@ -13,10 +13,11 @@ const Project = () =>  {
                 whileInView="show"
                 transition = {{type : 'spring' , duration : 2 , bounce : 0.5}}
                 viewport={{ once: true }}
-                className='md:text-[48px] pb-10 text-[32px] justify-center text-center text-black dark:text-slate-300 font-Ramabhadra'>My Projects 
+                className='md:text-[48px]  text-[32px] justify-center text-center text-black dark:text-slate-300 font-Ramabhadra'>My Projects 
             </motion.h1>
-            <motion.p variants={fadeIn('left' , 20)} initial="hidden" whileInView="show"  transition = {{type : 'spring' , duration : 2 , bounce : 0.5}} viewport={{ once: true }} className="text-black dark:text-slate-200 pb-5 my-5 text-xl text-center">Here are a few past projects I've worked on.</motion.p>    
-            <div className="flex items-center gap-10 justify-center rounded-md">
+            <motion.p variants={fadeIn('left' , 20)} initial="hidden" whileInView="show"  transition = {{type : 'spring' , duration : 2 , bounce : 0.5}} viewport={{ once: true }} className="text-black dark:text-slate-300  font-Ramabhadra my-5 text-xl text-center">Here are a few past projects I've worked on.</motion.p>    
+ 
+            <div className="flex items-center my-10 gap-10 justify-center rounded-md">
                 <div className="grid grid-col-1 gap-16">
                     {Myprojects.slice(0, 3).map((item) => ( 
                         <motion.div 
@@ -26,7 +27,7 @@ const Project = () =>  {
                         whileInView="show"
                         transition = {{type : 'tween' , duration : 0.5}}
                         viewport={{ once: true }} 
-                        className="group relative items-center justify-center overflow-hidden cursor-pointer rounded-lg">
+                        className="group relative items-center justify-center overflow-hidden cursor-default rounded-lg">
                         <ProjectCard e={item} />
                         </motion.div>
                     ))}

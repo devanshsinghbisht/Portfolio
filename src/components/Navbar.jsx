@@ -1,4 +1,4 @@
-import { useState , useEffect } from "react";
+import { useState  } from "react";
 import { motion } from "framer-motion";
 import { fadeIn , staggerContainer } from "../utils/motion";
 import { Navigation } from "../constants";
@@ -6,12 +6,14 @@ import { hamburger } from '../constants';
 import UseDarkSide from "./UseDarkSide";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
+export let dark = 1;
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [navbar , setNavbar] = useState(false);
  
   const changeNavbar = () => {
-    if(window.scrollY >= 10){
+    if(window.scrollY >= 50){
       setNavbar(true); 
     } else {
       setNavbar(false);
@@ -20,23 +22,18 @@ const Navbar = () => {
 
   const [colorTheme, setTheme] = UseDarkSide(); 
   const [darkSide, setDarkSide] = useState( colorTheme  === "dark" ? true : false);
-
+  dark = darkSide;
   const toggleDarkMode = (checked) => {
-    console.log(checked)
-    console.log("This is Color Theme",colorTheme);
-    setTheme(colorTheme)
+    setTheme(colorTheme); 
     setDarkSide(checked);
   };
- 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, []);
+
   window.addEventListener('scroll' , changeNavbar);   
   return (
     <nav 
       variants={fadeIn('down' , 'tyeen' , 0.2 , 0 , 40)}
-      className={ navbar ? 'w-full self-stretch z-100 flex px-5 py-3 flex-row justify-between items-center fixed top-0  bg-zinc-400  dark:bg-zinc-900  drop-shadow-lg' : 'w-full px-5 flex py-4 justify-between items-center navbar' }  
-    >
+      className={ navbar ? 'w-full self-stretch z-100 flex px-5 py-3 flex-row justify-between items-center fixed top-0  bg-zinc-400  dark:bg-zinc-800  drop-shadow-lg' : 'w-full px-5 flex py-4 justify-between items-center navbar' }  
+    > 
       <motion.div whileHover = {{scale : 1.2  }} className="flex md:justify-start md:order-1 order-2  justify-center "> 
         <a  href="#Home" className=" drop-shadow-3xl  px-10 font-irish in-shadow items-center font-bold text-black  dark:text-slate-300  md:text-[30px] text-[24px]">DSB</a> 
       </motion.div>
@@ -47,7 +44,7 @@ const Navbar = () => {
             variants={fadeIn('up', 5)}    
             whileHover = {{scale : 1.2  }}
             transition = {{type : 'spring' , duration : 0.7 , bounce : 0.7}} 
-            className="font-Alkalami text-[16px] mr-10 "  
+            className="font-Ramabhadra text-[16px] mr-10 "  
           >
             <a
               href={item.href}     
@@ -61,7 +58,7 @@ const Navbar = () => {
       {/* Mobole Navabr */}
       <div className="md:hidden flex justify-start items-center ">
         <svg  
-          xmlns="http://www.w3.org/2000/svg" className='w-[24px] h-[24px] fill-black dark:fill-slate-100 fixed hover:cursor-pointer z-30' width="20"   height="12" viewBox={toggle ? hamburger[0].viewbox : hamburger[1].viewbox}
+          xmlns="http://www.w3.org/2000/svg" className='w-[24px] h-[24px] fill-black dark:fill-slate-100   hover:cursor-pointer z-30' width="20"   height="12" viewBox={toggle ? hamburger[0].viewbox : hamburger[1].viewbox}
           alt="menu"   
           onClick={() => setToggle((prev) => (!prev))}
         >
@@ -75,7 +72,7 @@ const Navbar = () => {
               variants = {fadeIn('right' , 30)}
               whileHover = {{scale : 1.1}}  
               transition = {{type : 'spring' , duration : 0.8 , bounce : 0.5}}
-              className="font-Alkalami text-[16px] mr-1 mb-5 py-2  "  
+              className="font-Ramabhadra text-[16px] mr-1 mb-5 py-2  "  
             >
               <a
                 href={item.href}     
