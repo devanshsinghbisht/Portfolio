@@ -1,5 +1,6 @@
 import { useState  } from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-scroll';
 import { fadeIn , staggerContainer } from "../utils/motion";
 import { Navigation } from "../constants";
 import { hamburger } from '../constants';
@@ -13,7 +14,7 @@ const Navbar = () => {
   const [navbar , setNavbar] = useState(false);
  
   const changeNavbar = () => {
-    if(window.scrollY >= 50){
+    if(window.scrollY >= 10){
       setNavbar(true); 
     } else {
       setNavbar(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
       className={ navbar ? 'w-full self-stretch z-100 flex px-5 py-3 flex-row justify-between items-center fixed top-0  bg-zinc-400  dark:bg-zinc-800  drop-shadow-lg' : 'w-full px-5 flex py-4 justify-between items-center navbar' }  
     > 
       <motion.div whileHover = {{scale : 1.2  }} className="flex md:justify-start md:order-1 order-2  justify-center "> 
-        <a  href="#Home" className=" drop-shadow-3xl  px-10 font-irish in-shadow items-center font-bold text-black  dark:text-slate-300  md:text-[30px] text-[24px]">DSB</a> 
+        <Link to="home" offset={-50} className=" drop-shadow-3xl  cursor-pointer px-10 font-irish in-shadow items-center font-bold text-black  dark:text-slate-300  md:text-[30px] text-[24px]">DSB</Link> 
       </motion.div>
       < motion.ul variants={staggerContainer(0.2 , 0)} initial="hidden" whileInView="show" viewport={{ once: true }} className="list-none md:flex hidden justify-center items-center flex-1 md:order-2">
         {Navigation.map((item) => (
@@ -46,12 +47,9 @@ const Navbar = () => {
             transition = {{type : 'spring' , duration : 0.7 , bounce : 0.7}} 
             className="font-Ramabhadra text-[16px] mr-10 "  
           >
-            <a
-              href={item.href}     
-              className={ "text-black dark:text-slate-300  text-lg  m-2"}
-            > 
-              {item.name}
-            </a>
+            <Link to={item.dname} offset={item.offset}  className={ "text-black dark:text-slate-300 cursor-pointer  text-lg  m-2"}>
+              {item.name} 
+            </Link>   
           </motion.li>
         ))}
       </motion.ul>
@@ -64,26 +62,23 @@ const Navbar = () => {
         >
           <path d={toggle ? hamburger[0].path : hamburger[1].path} />
         </svg>    
-        <motion.div variants = {fadeIn('right' , 30)} initial="hidden" whileInView="show" className={`${toggle ? 'flex p-5 fixed w-1/2 justify-center  h-screen bg-slate-400 bg-opacity-95 dark:bg-slate-800 dark:bg-opacity-95 top-0 left-0 z-20' : 'hidden'} `}>
-        <motion.ul variants={staggerContainer(0.15 , 0)} initial="hidden" whileInView="show" className="grid grid-cols gap-4 content-center place-items-center">
-          {Navigation.map((item) => ( 
-            <motion.li  
-            key={item.key}
-              variants = {fadeIn('right' , 30)}
-              whileHover = {{scale : 1.1}}  
-              transition = {{type : 'spring' , duration : 0.8 , bounce : 0.5}}
-              className="font-Ramabhadra text-[16px] mr-1 mb-5 py-2  "  
-            >
-              <a
-                href={item.href}     
-                className={ "justify-center text-black dark:text-slate-300  items-center text-lg hover:text-white  m-2"}
-              > 
-                {item.name}
-              </a>
-              <hr />
-            </motion.li>
-          ))}
-        </motion.ul>
+        <motion.div variants = {fadeIn('right' , 30)} initial="hidden" whileInView="show" className={`${toggle ? 'flex p-5 fixed w-full justify-center  h-screen bg-slate-600 bg-opacity-90 dark:bg-slate-900 dark:bg-opacity-95 top-0 left-0 z-20' : 'hidden'} `}>
+          <motion.ul variants={staggerContainer(0.15 , 0)} initial="hidden" whileInView="show" className="grid grid-cols gap-4 content-center place-items-center">
+            {Navigation.map((item) => ( 
+              <motion.li  
+              key={item.key}
+                variants = {fadeIn('right' , 30)}
+                whileHover = {{scale : 1.1}}  
+                transition = {{type : 'spring' , duration : 0.8 , bounce : 0.5}}
+                className="font-Ramabhadra text-[16px] mr-1 mb-5 py-2  "  
+              >
+                <Link to={item.dname} offset={item.offset}  className={ "justify-center text-black dark:text-slate-300  items-center text-lg  cursor-pointer m-2"}>
+                  {item.name} 
+                </Link> 
+                <hr />
+              </motion.li>
+            ))}
+          </motion.ul>
         </motion.div>
       </div>
       <div className="lg:mx-4 order-3 ">

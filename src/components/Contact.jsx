@@ -20,16 +20,16 @@ const Contact = () => {
     };
     return (
         <>
-            <div id='Contact' className="container max-w-6xl py-5 my-7 lg:p-5">
+            <div name="contact" id='Contact' className="container max-w-6xl py-5 my-7 lg:p-16">
                 <motion.h1 
                     variants={fadeIn('right' , 80)} 
                     initial="hidden" 
                     whileInView="show" 
                     transition = {{type : 'spring' , duration : 2.5 , bounce : 0.5}}
                     viewport={{ once: true }} 
-                    className='md:text-[48px]   text-[32px] text-black   dark:text-slate-300 font-Ramabhadra text-center'>Contact me
+                    className='md:text-[35px]   text-[24px] text-black   dark:text-slate-300 font-Ramabhadra text-center'>Contact me
                 </motion.h1>
-                <motion.p variants={fadeIn('left' , 20)} initial="hidden" whileInView="show"  transition = {{type : 'spring' , duration : 2 , bounce : 0.5}} viewport={{ once: true }} className="text-black dark:text-slate-300  font-Ramabhadra my-5 text-xl text-center">Have something to say! Get in touch</motion.p>
+                <motion.p variants={fadeIn('left' , 20)} initial="hidden" whileInView="show"  transition = {{type : 'spring' , duration : 2 , bounce : 0.5}} viewport={{ once: true }} className="text-black dark:text-slate-300  font-Ramabhadra my-5 text-lg text-center">Have something to say! Get in touch</motion.p>
  
                 <div className="flex flex-row w-full justify-center ">
                     <motion.div variants={staggerContainer(0.1 , 0)} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex-col md:order-1 hidden md:block basis-1/4">
@@ -51,16 +51,16 @@ const Contact = () => {
                         <motion.form ref={form} onSubmit={sendEmail} variants={staggerContainer(0.1 , 0)} initial="hidden" whileInView="show" viewport={{ once: true }}>
                             <div className="flex flex-row-2 gap-5">
                                 <div className="flex flex-col w-full">
-                                    <motion.label for="name" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration :    .5 }} className='text-black font-Ramabhadra  dark:text-slate-300 text-[20px] py-1'>Full name</motion.label>           
+                                    <motion.label for="name" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration :    .5 }} className='text-black font-Ramabhadra  dark:text-slate-300 text-[18px] py-1'>Full name</motion.label>           
                                     <motion.input variants={fadeIn('up'  , 50)} transition = {{type : 'tween' , duration : .5 }} placeholder='Your full name' className='w-full p-3 rounded-md bg-gray-100 dark:bg-slate-700 dark:text-slate-100' type="text" name="name"  required/>
                                 </div>
                                 <div className="flex flex-col w-full">
-                                    <motion.label for="email" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} className='text-black  font-Ramabhadra  dark:text-slate-300 text-[20px] py-1'>Email</motion.label>           
+                                    <motion.label for="email" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} className='text-black  font-Ramabhadra  dark:text-slate-300 text-[18px] py-1'>Email</motion.label>           
                                     <motion.input variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} placeholder='example@gmail.com' className='w-full p-3 rounded-md bg-gray-100 dark:bg-slate-700 dark:text-slate-100' type="email" name="email" required/>
                                 </div>
                             </div>
                             <div className="flex flex-col">
-                                <motion.label for="message" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} className='text-black  font-Ramabhadra dark:text-slate-300 text-[20px] py-1'>Your Message</motion.label>     
+                                <motion.label for="message" variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} className='text-black  font-Ramabhadra dark:text-slate-300 text-[18px] py-1'>Your Message</motion.label>     
                                 <motion.textarea variants={fadeIn('up' , 50)} transition = {{type : 'tween' , duration : .5 }} placeholder='Write your message here!' className='caret-black dark:caret-black    p-3 rounded-md h-[9rem] bg-gray-100 dark:bg-slate-700 dark:text-slate-100'type="text" name='message' required/>
                             </div>
                             <motion.button variants={zoomIn()} transition = {{duration : 0.2 }} type="submit" value="Send" className='bg-slate-800 border-lg text-slate-100 rounded-lg w-full hover:bg-slate-600 my-3 border-grey-dark p-2 opacity-90 shadow font-serif text-lg'>Send message</motion.button>

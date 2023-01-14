@@ -5,7 +5,7 @@ import { fadeIn , staggerContainer} from '../utils/motion';
 const Front = () => {
   return (    
     <>
-      <div id='Home' className="container md:py-[8rem] lg:px-[3rem]  center grid md:grid-cols-2 md:gap-4 gap-2 md:grid-flow-col items-center justify-items-center">
+      <div name="home" id='Home' className="container md:py-[8rem] lg:px-[3rem]  center grid md:grid-cols-2 md:gap-4 gap-2 md:grid-flow-col items-center justify-items-center">
         <div className="flex col-span-1 md:mt-20 mt-10 md:order-2   justify-items-center">
           <motion.img variants={fadeIn('left', 100)}  initial="hidden"  whileInView="show" viewport={{once : true}} whileHover={{scale : 1.1 }} src={Debu} alt="debu"
             className=' md:w-[360px] object-cover md:h-[330px] w-[230px] h-[220px] boxShadow Front_img dark:shadow-3xl dark:shadow-zinc-400'

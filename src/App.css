@@ -8,7 +8,25 @@ body {
   background: linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(213,215,231,1) 100%);
   overflow-x: hidden;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #49494953; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .my-bg {
   background : linear-gradient(to right, #DC2560, #1D2671);
 }
