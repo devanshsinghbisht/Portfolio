@@ -12,16 +12,16 @@ const  Footer = () => {
                 <div className="flex flex-col gap-5 h-full md:basis-2/4  basis-2/3 items-center">
                     <div className="flex flex-row py-5 md:gap-20 gap-5">
                         <motion.div variants={fadeIn('up' , 10  )} transition = {{type : 'spring' , duration : 0.5 , bounce : 0.5}}>                          
-                            <a href="#Project" className="text-slate-300 md:text-[18px] hover:text-white text-[16px] font-Alkalami">Projects</a>
+                            <a href="#Project" className="text-slate-300 md:text-[18px] hover:text-white text-[16px] font-Ramabhadra">Projects</a>
                         </motion.div>
                         <motion.div variants={fadeIn('up' , 10  )} transition = {{type : 'spring' , duration : 0.5 , bounce : 0.5}}>                             
-                            <a href="#Skillset" className="text-slate-300 md:text-[18px] hover:text-white first-letter:text-[16px] font-Alkalami">Skillset</a>
+                            <a href="#Skillset" className="text-slate-300 md:text-[18px] hover:text-white first-letter:text-[16px] font-Ramabhadra">Skillset</a>
                         </motion.div>
                         <motion.div variants={fadeIn('up' , 10  )} transition = {{type : 'spring' , duration : 0.5 , bounce : 0.5}}>                          
-                            <a href="#Contact" className="text-slate-300 md:text-[18px] hover:text-white first-letter:text-[16px] font-Alkalami">Contact me</a>
+                            <a href="#Contact" className="text-slate-300 md:text-[18px] hover:text-white first-letter:text-[16px] font-Ramabhadra">Contact me</a>
                         </motion.div>
                     </div>  
-                    <motion.span variants={zoomIn()} className="text-white  ">@2020 all rights reserved</motion.span>
+                    <motion.span variants={zoomIn()} className="text-white  ">@2023 all rights reserved</motion.span>
                 </div>
                 <div className="flex flex-col basis-1/4 gap-3 h-full py-5   ">
                     <motion.a variants={fadeIn('up' , 10  )} transition = {{type : 'spring' , duration : 0.5 , bounce : 0.5}} href="https://www.linkedin.com/in/devansh-bisht-b72905199/" target="_blank" className="text-slate-300 md:text-[18px] hover:text-white first-letter:text-[16px] font-serif">Linkedin</motion.a>

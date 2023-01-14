@@ -4,7 +4,7 @@ const ProjectCard = (e) => {
   const tags = e.e.tags;
   return (
     <>
-        <div className="md:h-[18rem] md:w-[35rem] h-[13rem] w-[20rem]">     
+        <div className="md:h-[18rem]  md:w-[35rem] h-[13rem] w-[20rem]">     
             <img className="h-full w-full shrink object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500" src={e.e.img} alt={e.e.name} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black" ></div>
@@ -24,7 +24,7 @@ const ProjectCard = (e) => {
             </a>
             {e.e.live !== 'false' && (
               <a href={e.e.live} target="_blank" rel="noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" className='w-9 h-9 fill-slate-200 content-center pt-1' width="24" height="24" viewBox={links[1].viewbox}>
+              <svg xmlns="http://www.w3.org/2000/svg" className='w-9 h-[2.6rem] fill-slate-200 content-center pt-[0.2rem]' width="24" height="24" viewBox={links[1].viewbox}>
                   <path d={links[1].path} />
               </svg>  
             </a>

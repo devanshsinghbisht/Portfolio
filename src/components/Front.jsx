@@ -5,20 +5,20 @@ import { fadeIn , staggerContainer} from '../utils/motion';
 const Front = () => {
   return (    
     <>
-      <div id='Home' className="container md:py-[8rem] lg:px-[3rem]  center grid md:grid-cols-2 md:gap-4 gap-2 md:grid-flow-col items-center justify-items-center">
+      <div name="home" id='Home' className="container md:py-[8rem] lg:px-[3rem]  center grid md:grid-cols-2 md:gap-4 gap-2 md:grid-flow-col items-center justify-items-center">
         <div className="flex col-span-1 md:mt-20 mt-10 md:order-2   justify-items-center">
           <motion.img variants={fadeIn('left', 100)}  initial="hidden"  whileInView="show" viewport={{once : true}} whileHover={{scale : 1.1 }} src={Debu} alt="debu"
             className=' md:w-[360px] object-cover md:h-[330px] w-[230px] h-[220px] boxShadow Front_img dark:shadow-3xl dark:shadow-zinc-400'
           />
         </div>
         <motion.div variants={staggerContainer(0.2 , 0)} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex flex-col col-span-1  md:order-1 mt-20 w-full z-1 justify-center    ">
-          <motion.h1 variants={fadeIn('right'  , 80)} className="md:text-[48px] text-[35px] text-black dark:text-slate-400 font-Pacifico md:text-left text-center">Hi! I'm Devansh</motion.h1> 
+          <motion.h1 variants={fadeIn('right'  , 80)} className="md:text-[48px] text-[35px] text-black dark:text-slate-300 font-Pacifico md:text-left text-center">Hi! I'm Devansh</motion.h1> 
           <br />  
-          <motion.p variants={fadeIn('right', 80)} className="md:text-[24px] text-[25px] text-black dark:text-slate-400 font-Alkalami md:text-left text-center">
+          <motion.p variants={fadeIn('right', 80)} className="md:text-[24px] text-[18px] text-black dark:text-slate-300 font-Ramabhadra md:text-left text-center">
             React Developer & Competitive Programmer  
           </motion.p>
           <br />
-          <motion.p variants={fadeIn('right', 80)} className="md:text-[24px] text-[25px] text-black dark:text-slate-400 font-Alkalami md:text-left text-center">
+          <motion.p variants={fadeIn('right', 80)} className="md:text-[24px] text-[18px] text-black dark:text-slate-300 font-Ramabhadra md:text-left text-center">
           I am Devansh Singh Bisht. I am currently pursuing Mca. I love coding and Gaming
           </motion.p>
           <a href="https://drive.google.com/file/d/180rAM3Di-NFNYLWWeHjllSJ7Yh5J9wqD/view?usp=share_link" rel="noreferrer" target="_blank " className='md:text-left text-center justify-center center   '>
