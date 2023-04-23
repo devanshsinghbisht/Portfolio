@@ -6,7 +6,7 @@ import { dark } from './Navbar';
 const Skillset = () => {  
     const SetEffect = () =>  {
         let closer = [];
-        function clearcloser() {   
+        function clearcloser() {
             closer.splice(0, closer.length).forEach((e) => {
                 e.style.borderImage = null;
             });
@@ -48,7 +48,7 @@ const Skillset = () => {
             const myar = [el1 , el2 , el3 , el4];
             closer = myar.reduce((acc , r ) => {
                 const brect = r.getBoundingClientRect();
-                if(r.className === 'card'){
+                if(r.classList.contains('card')){
                     const bx = x - brect.left;
                     const by = y - brect.top;
                     if(!dark) {
@@ -58,7 +58,7 @@ const Skillset = () => {
                     }
                 }
                 return [...acc , r];
-            },[null])
+            },[])
         })
         element.onmouseleave = () => {
             clearcloser();
