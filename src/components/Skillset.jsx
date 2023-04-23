@@ -48,15 +48,17 @@ const Skillset = () => {
             const myar = [el1 , el2 , el3 , el4];
             closer = myar.reduce((acc , r ) => {
                 const brect = r.getBoundingClientRect();
-                const bx = x - brect.left;
-                const by = y - brect.top;
-                if(!dark) {
-                    r.style.borderImage = `radial-gradient(40% 90% at ${bx}px ${by}px ,rgba(255,255,255,1), rgb(107 114 128) ) 1 / 1px / 0px stretch `;
-                } else {
-                    r.style.borderImage = `radial-gradient(40% 90% at ${bx}px ${by}px ,rgba(0,0,0,1), rgb(156 163 175) ) 1 / 1px / 0px stretch `;
+                if(r.className === 'card'){
+                    const bx = x - brect.left;
+                    const by = y - brect.top;
+                    if(!dark) {
+                        r.style.borderImage = `radial-gradient(40% 90% at ${bx}px ${by}px ,rgba(255,255,255,1), rgb(107 114 128) ) 1 / 1px / 0px stretch `;
+                    } else {
+                        r.style.borderImage = `radial-gradient(40% 90% at ${bx}px ${by}px ,rgba(0,0,0,1), rgb(156 163 175) ) 1 / 1px / 0px stretch `;
+                    }
                 }
                 return [...acc , r];
-            },[])
+            },[null])
         })
         element.onmouseleave = () => {
             clearcloser();
@@ -73,7 +75,7 @@ const Skillset = () => {
                     transition = {{type : 'spring' , duration : 2 , bounce : 0.5}}
                     viewport={{ once: true }}
                     id="heading"
-                    className='md:text-[35px] text-[24px] text-black  dark:text-slate-300 font-Ramabhadra text-center'>My Skillset
+                    className='md:text-[35px] text-[24p x] text-black  dark:text-slate-300 font-Ramabhadra text-center'>My Skillset
                 </motion.h1>
                 <motion.div 
                     variants={staggerContainer(0.1 , 0)} 
